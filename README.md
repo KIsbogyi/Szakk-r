@@ -1,2 +1,2 @@
-# Szakk-r
+# Szakkör
 Szakköri cucc
