@@ -1,0 +1,2 @@
+# Szakk-r
+Szakköri cucc
