@@ -1,0 +1,52 @@
+graph = {0: [(1, 10), (2, 4), (4, 6), (5, 8)],
+         1: [(0, 10), (2, 5), (4, 6)],
+         2: [(0, 4), (1, 5), (3, 4), (4, 9), (7, 3)],
+         3: [(2, 4), (4, 6), (7, 4)],
+         4: [(0, 6), (1, 6), (2, 9), (3, 6), (5, 12), (6, 1), (7, 13)],
+         5: [(0, 8), (4, 12)],
+         6: [(4, 1), (7, 2)],
+         7: [(2, 3), (3, 4), (4, 13), (6, 2)]}
+
+nlista = [0] * len(graph)
+print(nlista)
+
+for i in range(len(graph)):
+    lista = [0] * len(graph)
+    for elem in graph[i]:
+        lista[elem[0]] = elem[1]
+    nlista[i] = lista
+print(nlista)
+
+ellista = []
+
+for i in range(len(graph)):
+    for elem in graph[i]:
+        elista = []
+        elista.append(i)
+        elista.append(elem[0])
+        elista.append(elem[1])
+        ellista.append(elista)
+
+
+belem = [0]*3
+for kelem in ellista:
+    belem[0] = kelem[1]
+    belem[1] = kelem[0]
+    belem[2] = kelem[2]
+    if belem in ellista:
+        ellista.remove(belem)
+
+for i in range(len(ellista)):
+    print(ellista[i])
+
+pontok = list(range(len(graph)))
+
+sz = 0
+def lami(sz):
+    for i in range(len(ellista)):
+        if ellista[i][0] == 0:
+            pontok.remove(ellista[i][1])
+            sz = ellista[1]
+            lami(sz)
+lami(sz)
+print(pontok)
